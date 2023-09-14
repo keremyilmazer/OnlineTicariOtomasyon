@@ -26,6 +26,7 @@ namespace MvcOnlineTicariOtomasyon.Controllers
         [HttpPost]
         public ActionResult DepartmanEkle(Departman d)
         {
+            d.Durum = true;
             c.Departmans.Add(d);
             c.SaveChanges();
             return RedirectToAction("Index");
@@ -37,6 +38,25 @@ namespace MvcOnlineTicariOtomasyon.Controllers
             dep.Durum = false;
             c.SaveChanges();
             return RedirectToAction("Index");
+        }
+
+        public ActionResult DepartmanGetir(int id)
+        {
+            var dpt = c.Departmans.Find(id);
+            return View("DepartmanGetir", dpt);
+        }
+
+        public ActionResult DepartmanGuncelle(Departman p)
+        {
+            var dept = c.Departmans.Find(p.Departmanid);
+            dept.DepartmanAd = p.DepartmanAd;
+            c.SaveChanges();
+            return RedirectToAction("Index");
+        }
+
+        public ActionResult DepartmanDetay(int id)
+        {
+            return View();
         }
     }
 }
