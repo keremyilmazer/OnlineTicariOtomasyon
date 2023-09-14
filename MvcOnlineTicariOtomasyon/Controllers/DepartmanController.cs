@@ -56,7 +56,8 @@ namespace MvcOnlineTicariOtomasyon.Controllers
 
         public ActionResult DepartmanDetay(int id)
         {
-            return View();
+            var degerler = c.Personels.Where(x => x.Departmanid == id).ToList();
+            return View(degerler);
         }
     }
 }
