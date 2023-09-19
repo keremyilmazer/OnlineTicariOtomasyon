@@ -67,12 +67,17 @@ namespace MvcOnlineTicariOtomasyon.Controllers
             urn.Durum = p.Durum;
             urn.Kategoriid = p.Kategoriid;
             urn.Marka = p.Marka;
-            urn.SatisFiyat= p.SatisFiyat;
+            urn.SatisFiyat = p.SatisFiyat;
             urn.Stok = p.Stok;
             urn.UrunAd = p.UrunAd;
             urn.UrunGorsel = p.UrunGorsel;
             c.SaveChanges();
             return RedirectToAction("Index");
+        }
+        public ActionResult UrunListesi()
+        {
+            var degerler = c.Uruns.ToList();
+            return View(degerler);
         }
     }
 }
