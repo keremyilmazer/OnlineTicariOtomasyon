@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Configuration;
 using System.Linq;
 using System.Web;
 
@@ -24,7 +25,10 @@ namespace MvcOnlineTicariOtomasyon.Models.Siniflar
         [Column(TypeName = "Varchar")]
         [StringLength(60)]
         public string VergiDairesi { get; set; }
-        public DateTime Saat { get; set; }
+
+        [Column(TypeName = "char")]
+        [StringLength(5)]
+        public string Saat { get; set; }
 
         [Column(TypeName = "Varchar")]
         [StringLength(30)]
@@ -33,6 +37,8 @@ namespace MvcOnlineTicariOtomasyon.Models.Siniflar
         [Column(TypeName = "Varchar")]
         [StringLength(30)]
         public string TeslimAlan { get; set; }
+
+        public decimal Toplam { get; set; }
         public ICollection<FaturaKalem> FaturaKalems { get; set; }
     }
 }
