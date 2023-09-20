@@ -29,6 +29,12 @@ namespace MvcOnlineTicariOtomasyon.Controllers
             ViewBag.d7 = deger7;
             var deger8 = (from x in c.Uruns orderby x.SatisFiyat descending select x.UrunAd).FirstOrDefault();
             ViewBag.d8 = deger8;
+            var deger9 = (from x in c.Uruns orderby x.SatisFiyat ascending select x.UrunAd).FirstOrDefault();
+            ViewBag.d9 = deger9;
+            var deger10 = c.Uruns.Count(x => x.UrunAd == "Buzdolabı").ToString();
+            ViewBag.d10 = deger10;
+            var deger11 = c.Uruns.Count(x => x.UrunAd == "Laptop").ToString();
+            ViewBag.d11 = deger11;
             return View();
         }
     }
