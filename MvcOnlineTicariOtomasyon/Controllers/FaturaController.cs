@@ -46,5 +46,10 @@ namespace MvcOnlineTicariOtomasyon.Controllers
             c.SaveChanges();
             return RedirectToAction("Index");
         }
+        public ActionResult FaturaDetay(int id)
+        {
+            var degerler = c.FaturaKalems.Where(x => x.Faturaid == id).ToList();
+            return View(degerler);
+        }
     }
 }
