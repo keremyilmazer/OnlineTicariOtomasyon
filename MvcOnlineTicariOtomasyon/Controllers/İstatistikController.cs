@@ -35,6 +35,9 @@ namespace MvcOnlineTicariOtomasyon.Controllers
             ViewBag.d10 = deger10;
             var deger11 = c.Uruns.Count(x => x.UrunAd == "Laptop").ToString();
             ViewBag.d11 = deger11;
+            
+            var deger12 = c.Uruns.GroupBy(x => x.Marka).OrderByDescending(z => z.Count()).Select(y => y.Key).FirstOrDefault();
+            ViewBag.d12 = deger12;
 
             var deger14 = c.SatisHarekets.Sum(x => x.ToplamTutar).ToString();
             ViewBag.d14 = deger14;
