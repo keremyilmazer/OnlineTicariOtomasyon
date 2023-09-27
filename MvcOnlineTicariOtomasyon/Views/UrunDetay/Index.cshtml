@@ -1,5 +1,4 @@
-﻿@using MvcOnlineTicariOtomasyon.Models.Siniflar;
-@model List<Urun>
+﻿@model MvcOnlineTicariOtomasyon.Models.Siniflar.Class1
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/AdminLayout.cshtml";
@@ -39,7 +38,7 @@
         <section class="content">
             <!-- Default box -->
             <div class="card card-solid">
-                @foreach (var x in Model)
+                @foreach (var x in Model.Deger1)
                 {
                     <div class="card-body">
                         <div class="row">
@@ -196,3 +195,6 @@
     <script src="~/AdminLTE-3.0.4/dist/js/demo.js"></script>
 </body>
 </html>
+
+
+
