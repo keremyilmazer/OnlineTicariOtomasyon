@@ -50,5 +50,10 @@ namespace MvcOnlineTicariOtomasyon.Controllers
             ViewBag.d16 = deger16;
             return View();
         }
+
+        public ActionResult KolayTablolar()
+        {
+            return View();
+        }
     }
 }
