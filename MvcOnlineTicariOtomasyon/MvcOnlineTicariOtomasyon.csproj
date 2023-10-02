@@ -2853,6 +2853,7 @@
     <Content Include="Views\Galeri\Index.cshtml" />
     <Content Include="Views\UrunDetay\Index.cshtml" />
     <Content Include="Views\İstatistik\KolayTablolar.cshtml" />
+    <Content Include="Views\İstatistik\Partial1.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
