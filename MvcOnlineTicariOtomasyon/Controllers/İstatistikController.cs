@@ -60,11 +60,18 @@ namespace MvcOnlineTicariOtomasyon.Controllers
                             Sehir = g.Key,
                             Sayi = g.Count()
                         };
-            return View(sorgu);
+            return View(sorgu.ToList());
         }
         public PartialViewResult Partial1()
         {
-            return PartialView();
+            var sorgu2 = from x in c.Personels
+                         group x by x.Departmanid into g
+                         select new SinifGrup2
+                         {
+                             Departman = g.Key,
+                             Sayi = g.Count()
+                         };
+            return PartialView(sorgu2.ToList());
         }
     }
 }
