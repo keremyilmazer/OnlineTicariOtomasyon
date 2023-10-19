@@ -7,9 +7,7 @@
 
 <table class="table table-bordered" style="margin-top:20px">
     <tr>
-        <th>ID</th>
-        <th>Seri No</th>
-        <th>Sıra No</th>
+        <th>Seri Sıra No</th>
         <th>Vergi Dairesi</th>
         <th>Tarih</th>
         <th>Saat</th>
@@ -22,9 +20,7 @@
     @foreach (var k in Model)
     {
         <tr>
-            <td>@k.Faturaid</td>
-            <td>@k.FaturaSeriNo</td>
-            <td>@k.FaturaSıraNo</td>
+            <td>@k.FaturaSeriNo @k.FaturaSıraNo</td>
             <td>@k.VergiDairesi</td>
             <td>@k.Tarih</td>
             <td>@k.Saat</td>
