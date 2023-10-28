@@ -17,7 +17,7 @@
     @Html.TextBoxFor(x => x.Cariid, new { @class = "form-control" })
     <br />
     @Html.LabelFor(x => x.Adet)
-    <input type="number" class="form-control" placeholder="Adet girin.." id="txt1" onchange="sum();" />
+    <input type="number" name="Adet" class="form-control" min="0" placeholder="Adet girin.." id="txt1" onchange="sum();" />
     <br />
     @Html.LabelFor(x => x.Fiyat)
     <input type="text" name="Fiyat" value="@ViewBag.dgr2" class="form-control" id="txt2" onkeyup="sum();" />
@@ -25,9 +25,6 @@
     @Html.LabelFor(x => x.ToplamTutar)
     <input type="text" name="ToplamTutar" value="0" class="form-control" id="txt3" readonly />
     @*@Html.TextBoxFor(x => x.Kategoriid, new { @class = "form-control" })*@
-    <br />
-    @Html.LabelFor(x => x.Tarih)
-    @Html.TextBoxFor(x => x.Tarih, new { @class = "form-control" })
     <br />
     <button class="btn btn-primary">Satış Yap</button>
 </form>
