@@ -85,7 +85,7 @@ namespace MvcOnlineTicariOtomasyon.Controllers
         }
 
         [HttpGet]
-        public ActionResult SatisYap()
+        public ActionResult SatisYap(int id)
         {
             List<SelectListItem> deger3 = (from x in c.Personels.ToList()
                                            select new SelectListItem
@@ -94,6 +94,9 @@ namespace MvcOnlineTicariOtomasyon.Controllers
                                                Value = x.Personelid.ToString()
                                            }).ToList();
             ViewBag.dgr3 = deger3;
+            var deger1 = c.Uruns.Find(id);
+            ViewBag.dgr1 = deger1.Urunid;
+            ViewBag.dgr2 = deger1.SatisFiyat;
             return View();
         }
 
