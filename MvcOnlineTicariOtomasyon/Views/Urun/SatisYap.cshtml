@@ -11,7 +11,7 @@
     @Html.TextBoxFor(x => x.Urunid, new { @class = "form-control" })
     <br />
     @Html.LabelFor(x => x.Personelid)
-    @Html.TextBoxFor(x => x.Personelid, new { @class = "form-control" })
+    @Html.DropDownListFor(x => x.Personelid, (List<SelectListItem>)ViewBag.dgr3, new { @class = "form-control" })
     <br />
     @Html.LabelFor(x => x.Cariid)
     @Html.TextBoxFor(x => x.Cariid, new { @class = "form-control" })
