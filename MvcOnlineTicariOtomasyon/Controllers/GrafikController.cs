@@ -36,5 +36,44 @@ namespace MvcOnlineTicariOtomasyon.Controllers
                 .AddTitle("Stoklar").AddSeries(chartType: "Pie", name: "Stok", xValue: xvalue, yValues: yvalue);
             return File(grafik.ToWebImage().GetBytes(), "image/jpeg");
         }
+
+        public ActionResult Index4()
+        {
+            return View();
+        }
+        public ActionResult VisualizeUrunResult()
+        {
+            return Json(Urunlistesi(), JsonRequestBehavior.AllowGet);
+        }
+        public List<sinif1> Urunlistesi()
+        {
+            List<sinif1> snf = new List<sinif1>();
+            snf.Add(new sinif1()
+            {
+                urunad = "Bilgisayar",
+                stok = 120
+            });
+            snf.Add(new sinif1()
+            {
+                urunad = "Beyaz Eşya",
+                stok = 150
+            });
+            snf.Add(new sinif1()
+            {
+                urunad = "Mobilya",
+                stok = 70
+            });
+            snf.Add(new sinif1()
+            {
+                urunad = "Küçük Ev Aletleri",
+                stok = 180
+            });
+            snf.Add(new sinif1()
+            {
+                urunad = "Mobil Cihaz",
+                stok = 90
+            });
+            return snf;
+        }
     }
 }
