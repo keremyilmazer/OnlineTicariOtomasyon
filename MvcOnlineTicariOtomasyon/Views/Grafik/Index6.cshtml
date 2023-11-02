@@ -1,12 +1,12 @@
 ﻿
 @{
-    ViewBag.Title = "Index5";
+    ViewBag.Title = "Index6";
     Layout = "~/Views/Shared/AdminLayout.cshtml";
 }
 
 <!DOCTYPE html>
 <br />
-<h1>Ürün - Stok Grafiği Pie</h1>
+<h1>Ürün - Stok Grafiği Line</h1>
 <html lang="en">
 
 <head>
@@ -91,9 +91,9 @@
 
 
 
-            var columnChart = new google.visualization.PieChart(document
+            var columnChart = new google.visualization.LineChart(document
 
-                .getElementById('Piechart_div'));
+                .getElementById('Linechart_div'));
 
 
 
@@ -107,7 +107,7 @@
 
 <body>
 
-    <div id="Piechart_div"></div>
+    <div id="Linechart_div"></div>
 
 
 </body>
