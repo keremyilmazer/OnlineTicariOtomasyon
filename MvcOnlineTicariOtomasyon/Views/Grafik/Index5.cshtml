@@ -1,6 +1,6 @@
 ﻿
 @{
-    ViewBag.Title = "Index4";
+    ViewBag.Title = "Index5";
     Layout = "~/Views/Shared/AdminLayout.cshtml";
 }
 
@@ -30,7 +30,7 @@
 
                 contentType: "application/json",
 
-                url: '@Url.Action("VisualizeUrunResult", "Grafik")',
+                url: '@Url.Action("VisualizeUrunResult2", "Grafik")',
 
                 success: function (result) {
 
@@ -68,7 +68,7 @@
 
             $.each(result, function (i, obj) {
 
-                dataArray.push([obj.urunad, obj.stok]);
+                dataArray.push([obj.urn, obj.stk]);
 
             });
 
@@ -112,3 +112,4 @@
 </body>
 
 </html>
+

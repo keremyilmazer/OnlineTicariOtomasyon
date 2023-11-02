@@ -75,5 +75,28 @@ namespace MvcOnlineTicariOtomasyon.Controllers
             });
             return snf;
         }
+
+        public ActionResult Index5()
+        {
+            return View();
+        }
+        public ActionResult VisualizeUrunResult2()
+        {
+            return Json(UrunListesi2(), JsonRequestBehavior.AllowGet);
+        }
+
+        public List<sinif2> UrunListesi2()
+        {
+            List<sinif2> snf = new List<sinif2>();
+            using (var c = new Context())
+            {
+                snf = c.Uruns.Select(x => new sinif2
+                {
+                    urn = x.UrunAd,
+                    stk = x.Stok
+                }).ToList();
+            }
+            return snf;
+        }
     }
 }
