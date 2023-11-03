@@ -31,6 +31,8 @@ namespace MvcOnlineTicariOtomasyon.Controllers
         {
             var mail = (string)Session["CariMail"];
             var degerler = c.mesajlars.Where(x => x.Alici == mail).ToList();
+            var gelensayisi = c.mesajlars.Count(x => x.Alici == mail).ToString();
+            ViewBag.d1 = gelensayisi;
             return View(degerler);
         }
 
