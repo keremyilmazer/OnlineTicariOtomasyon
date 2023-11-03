@@ -29,7 +29,8 @@ namespace MvcOnlineTicariOtomasyon.Controllers
 
         public ActionResult GelenMesajlar()
         {
-            return View();
+            var degerler = c.mesajlars.ToList();
+            return View(degerler);
         }
 
         //[HttpGet]
