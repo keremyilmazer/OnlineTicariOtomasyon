@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using System.Web.Security;
 
 namespace MvcOnlineTicariOtomasyon.Controllers
 {
@@ -19,6 +20,8 @@ namespace MvcOnlineTicariOtomasyon.Controllers
             ViewBag.m = mail;
             return View(degerler);
         }
+
+        [Authorize]
         public ActionResult Siparislerim()
         {
             var mail = (string)Session["CariMail"];
@@ -27,6 +30,7 @@ namespace MvcOnlineTicariOtomasyon.Controllers
             return View(degerler);
         }
 
+        [Authorize]
         public ActionResult GelenMesajlar()
         {
             var mail = (string)Session["CariMail"];
@@ -38,6 +42,7 @@ namespace MvcOnlineTicariOtomasyon.Controllers
             return View(degerler);
         }
 
+        [Authorize]
         public ActionResult GidenMesajlar()
         {
             var mail = (string)Session["CariMail"];
@@ -49,6 +54,7 @@ namespace MvcOnlineTicariOtomasyon.Controllers
             return View(degerler);
         }
 
+        [Authorize]
         public ActionResult MesajDetay(int id)
         {
             var degerler = c.mesajlars.Where(x => x.MesajID == id).ToList();
@@ -93,6 +99,13 @@ namespace MvcOnlineTicariOtomasyon.Controllers
         {
             var degerler = c.KargoTakips.Where(x => x.TakipKodu == id).ToList();
             return View(degerler);
+        }
+
+        public ActionResult LogOut()
+        {
+            FormsAuthentication.SignOut();
+            Session.Abandon();
+            return RedirectToAction("Index", "Login");
         }
     }
 }
