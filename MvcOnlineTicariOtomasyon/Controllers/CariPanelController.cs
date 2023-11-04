@@ -49,15 +49,17 @@ namespace MvcOnlineTicariOtomasyon.Controllers
             return View(degerler);
         }
 
-        public ActionResult MesajDetay()
+        public ActionResult MesajDetay(int id)
         {
+            var degerler = c.mesajlars.Where(x => x.MesajID == id).ToList();
             var mail = (string)Session["CariMail"];
             var gelensayisi = c.mesajlars.Count(x => x.Alici == mail).ToString();
             ViewBag.d1 = gelensayisi;
             var gidensayisi = c.mesajlars.Count(x => x.Gonderici == mail).ToString();
             ViewBag.d2 = gidensayisi;
-            return View();  
+            return View(degerler);
         }
+        
         //[HttpGet]
         //public ActionResult YeniMesaj()
         //{
