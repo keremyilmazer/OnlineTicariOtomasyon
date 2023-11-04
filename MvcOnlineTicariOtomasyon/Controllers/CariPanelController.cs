@@ -74,6 +74,9 @@ namespace MvcOnlineTicariOtomasyon.Controllers
         [HttpPost]
         public ActionResult YeniMesaj(mesajlar m)
         {
+            var mail = (string)Session["CariMail"];
+            m.Tarih = DateTime.Parse(DateTime.Now.ToShortDateString());
+            m.Gonderici = mail;
             c.mesajlars.Add(m);
             c.SaveChanges();
             return View();
