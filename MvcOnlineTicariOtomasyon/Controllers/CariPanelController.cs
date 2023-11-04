@@ -88,5 +88,11 @@ namespace MvcOnlineTicariOtomasyon.Controllers
             k = k.Where(y => y.TakipKodu.Contains(p));
             return View(k.ToList());
         }
+
+        public ActionResult CariKargoTakip(string id)
+        {
+            var degerler = c.KargoTakips.Where(x => x.TakipKodu == id).ToList();
+            return View(degerler);
+        }
     }
 }
