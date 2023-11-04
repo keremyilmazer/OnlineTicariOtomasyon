@@ -59,17 +59,17 @@ namespace MvcOnlineTicariOtomasyon.Controllers
             ViewBag.d2 = gidensayisi;
             return View(degerler);
         }
-        
-        //[HttpGet]
-        //public ActionResult YeniMesaj()
-        //{
-        //    return View();
-        //}
 
-        //[HttpPost]
-        //public ActionResult YeniMesaj()
-        //{
-        //    return View();
-        //}
+        [HttpGet]
+        public ActionResult YeniMesaj()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult YeniMesaj(mesajlar m)
+        {
+            return View();
+        }
     }
 }
