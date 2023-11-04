@@ -6,7 +6,7 @@
 }
 
 <br />
-@using (Html.BeginForm("Index", "Kargo", FormMethod.Get))
+@using (Html.BeginForm("KargoTakip", "CariPanel", FormMethod.Get))
 {
     <p>
         Kargo Takip Numarası : @Html.TextBox("p")
@@ -32,5 +32,5 @@
         </tr>
     }
 </table>
-<a href="/Kargo/YeniKargo/" class="btn btn-info">Yeni Kargo Girişi</a>
+
 

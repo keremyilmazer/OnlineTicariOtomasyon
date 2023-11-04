@@ -85,10 +85,7 @@ namespace MvcOnlineTicariOtomasyon.Controllers
         public ActionResult KargoTakip(string p)
         {
             var k = from x in c.KargoDetays select x;
-            if (!string.IsNullOrEmpty(p))
-            {
-                k = k.Where(y => y.TakipKodu.Contains(p));
-            }
+            k = k.Where(y => y.TakipKodu.Contains(p));
             return View(k.ToList());
         }
     }
