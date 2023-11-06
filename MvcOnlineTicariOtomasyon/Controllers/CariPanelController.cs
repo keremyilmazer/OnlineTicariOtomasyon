@@ -12,7 +12,7 @@ namespace MvcOnlineTicariOtomasyon.Controllers
     {
         // GET: CariPanel
         Context c = new Context();
-        
+
         [Authorize]
         public ActionResult Index()
         {
@@ -23,6 +23,10 @@ namespace MvcOnlineTicariOtomasyon.Controllers
             ViewBag.mid = mailid;
             var toplamsatis = c.SatisHarekets.Where(x => x.Cariid == mailid).Count();
             ViewBag.toplamsatis = toplamsatis;
+            var toplamtutar = c.SatisHarekets.Where(x => x.Cariid == mailid).Sum(y => y.ToplamTutar);
+            ViewBag.toplamtutar = toplamtutar;
+            var toplamurunsayisi = c.SatisHarekets.Where(x => x.Cariid == mailid).Sum(y => y.Adet);
+            ViewBag.toplamurunsayisi = toplamurunsayisi;
             return View(degerler);
         }
 
