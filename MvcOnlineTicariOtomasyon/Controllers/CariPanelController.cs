@@ -12,12 +12,17 @@ namespace MvcOnlineTicariOtomasyon.Controllers
     {
         // GET: CariPanel
         Context c = new Context();
+        
         [Authorize]
         public ActionResult Index()
         {
             var mail = (string)Session["CariMail"];
             var degerler = c.Carilers.Where(x => x.CariMail == mail).ToList();
             ViewBag.m = mail;
+            var mailid = c.Carilers.Where(x => x.CariMail == mail).Select(y => y.Cariid).FirstOrDefault();
+            ViewBag.mid = mailid;
+            var toplamsatis = c.SatisHarekets.Where(x => x.Cariid == mailid).Count();
+            ViewBag.toplamsatis = toplamsatis;
             return View(degerler);
         }
 
