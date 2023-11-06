@@ -27,6 +27,8 @@ namespace MvcOnlineTicariOtomasyon.Controllers
             ViewBag.toplamtutar = toplamtutar;
             var toplamurunsayisi = c.SatisHarekets.Where(x => x.Cariid == mailid).Sum(y => y.Adet);
             ViewBag.toplamurunsayisi = toplamurunsayisi;
+            var adsoyad = c.Carilers.Where(x => x.CariMail == mail).Select(y => y.CariAd + " " + y.CariSoyad).FirstOrDefault();
+            ViewBag.adsoyad = adsoyad;
             return View(degerler);
         }
 

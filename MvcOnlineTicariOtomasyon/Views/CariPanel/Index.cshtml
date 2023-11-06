@@ -50,11 +50,8 @@
                                          src="~/AdminLTE-3.0.4/dist/img/user8-128x128.jpg"
                                          alt="User profile picture">
                                 </div>
-                                @foreach (var x in Model)
-                                {
-                                    <h3 class="profile-username text-center">@x.CariAd @x.CariSoyad</h3>
-                                    <p class="text-muted text-center">@x.CariMail</p>
-                                }
+                                    <h3 class="profile-username text-center">@ViewBag.adsoyad</h3>
+                                    <p class="text-muted text-center">@ViewBag.m</p>
                                 <ul class="list-group list-group-unbordered mb-3">
                                     <li class="list-group-item">
                                         <b>Toplam Satış:</b> <a class="float-right">@ViewBag.toplamsatis</a>
